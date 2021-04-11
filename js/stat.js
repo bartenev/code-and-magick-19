@@ -17,7 +17,7 @@ var renderCloud = function (ctx, x, y, color) {
 };
 
 var getMaxElement = function (array) {
-  if (array !== []) {
+  if (array.length > 0) {
     var maxElement = array[0];
     for (var i = 1; i < array.length; i++) {
       if (array[i] > maxElement) {
@@ -37,16 +37,16 @@ window.renderStatistics = function (ctx, names, times) {
 
   var maxTime = getMaxElement(times);
 
-  if (maxTime == null || names.length === 0) {
+  if (!maxTime || names.length === 0) {
     ctx.fillText('Ошибка! Данных нет(', CLOUD_X + GAP * 2, CLOUD_Y + GAP + FONT_GAP);
   } else {
     ctx.fillText('Ура вы победили!', CLOUD_X + GAP * 2, CLOUD_Y + GAP + FONT_GAP);
     ctx.fillText('Список результатов:', CLOUD_X + GAP * 2, CLOUD_Y + GAP + FONT_GAP * 2);
   }
 
-  //Проверка на одинаковое количество элементов в массивах
+  // Проверка на одинаковое количество элементов в массивах
   if (names.length > times.length) {
-    names.splice(times.length, names.length - times.length)
+    names.splice(times.length, names.length - times.length);
   }
 
   for (var i = 0; i < names.length; i++) {
