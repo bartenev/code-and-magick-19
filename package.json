@@ -7,13 +7,16 @@
     "type": "git"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "eslint": "6.3.0",
-    "eslint-config-htmlacademy": "0.5.2"
+    "eslint-config-htmlacademy": "0.5.2",
+    "gulp": "4.0.2"
   },
   "license": "MIT",
   "dependencies": {},
   "scripts": {
-    "test": "eslint js/"
+    "test": "eslint js/",
+    "start": "gulp"
   },
   "engines": {
     "node": "8.11"
