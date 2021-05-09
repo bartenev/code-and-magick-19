@@ -31,7 +31,9 @@
     xhr.addEventListener('load', function () {
       if (xhr.status === statusCode.OK) {
         onLoad(xhr.response);
-        node.style.display = 'none';
+        if (node) {
+          node.style.display = 'none';
+        }
       } else if (xhr.status >= statusCode.clientSideError && xhr.status < statusCode.clientSideError + errorRange) {
         onError('Ошибка: ' + xhr.status + ' ' + xhr.statusText + '. Перезагрузите страницу и попробуйте еще раз');
       } else if (xhr.status >= statusCode.serverSideError && xhr.status < statusCode.serverSideError + errorRange) {
