@@ -60,11 +60,13 @@
   setupWizardCoat.addEventListener('click', function () {
     wizardCoatInput.value = getNextElementOfArray(setupWizardCoat.style.fill, window.constants.COAT_COLORS);
     setupWizardCoat.style.fill = wizardCoatInput.value;
+    window.similarWizards.onCoatChange(wizardCoatInput.value);
   });
 
   setupWizardEyes.addEventListener('click', function () {
     wizardEyesInput.value = getNextElementOfArray(wizardEyesInput.value, window.constants.EYES_COLORS);
     setupWizardEyes.style.fill = wizardEyesInput.value;
+    window.similarWizards.onEyesChange(wizardEyesInput.value);
   });
 
   setupWizardFireball.addEventListener('click', function () {

@@ -7,8 +7,6 @@
   dialogHandle.addEventListener('mousedown', function (evt) {
     evt.preventDefault();
 
-    console.log(userDialog.offsetTop);
-    console.log(userDialog.offsetLeft);
     var startCoords = {
       x: evt.clientX,
       y: evt.clientY
